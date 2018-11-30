@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 2f5dedde150df6142abe3297a05959b6
+timeCreated: 1541472788
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: pCube121
+    100002: pCube122
+    100004: pCube123
+    100006: pCube124
+    100008: pCube125
+    100010: pCube126
+    100012: pCube127
+    100014: pCube128
+    100016: pCube129
+    100018: pCube130
+    100020: pCube131
+    100022: pCube132
+    100024: pCube133
+    100026: pCube134
+    100028: pCube135
+    100030: pCube136
+    100032: pCube137
+    100034: pCube138
+    100036: //RootNode
+    100038: transform280
+    100040: transform281
+    100042: transform282
+    100044: transform283
+    100046: transform284
+    100048: transform285
+    100050: transform286
+    100052: transform287
+    100054: transform288
+    100056: transform289
+    100058: transform290
+    100060: transform291
+    100062: transform292
+    100064: transform293
+    100066: transform294
+    100068: transform295
+    100070: transform296
+    400000: pCube121
+    400002: pCube122
+    400004: pCube123
+    400006: pCube124
+    400008: pCube125
+    400010: pCube126
+    400012: pCube127
+    400014: pCube128
+    400016: pCube129
+    400018: pCube130
+    400020: pCube131
+    400022: pCube132
+    400024: pCube133
+    400026: pCube134
+    400028: pCube135
+    400030: pCube136
+    400032: pCube137
+    400034: pCube138
+    400036: //RootNode
+    400038: transform280
+    400040: transform281
+    400042: transform282
+    400044: transform283
+    400046: transform284
+    400048: transform285
+    400050: transform286
+    400052: transform287
+    400054: transform288
+    400056: transform289
+    400058: transform290
+    400060: transform291
+    400062: transform292
+    400064: transform293
+    400066: transform294
+    400068: transform295
+    400070: transform296
+    2300000: pCube138
+    3300000: pCube138
+    4300000: pCube138
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: aeb0da5619dfd97409803bcf715ed71c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
