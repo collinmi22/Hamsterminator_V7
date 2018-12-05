@@ -30,12 +30,22 @@ public class Enemy : MonoBehaviour {
     public bool itemDrop;
 
     public GameObject Powerup;
+
+    public int Costume;
     #endregion Public variables
 
     #region Private variables
     // A reference to our animators
     private Animator anim;
+
+    private bool Dead;
     #endregion Private variables
+
+    private void Awake()
+    {   // Get our animator
+        anim = GetComponent<Animator>();
+        anim.SetInteger("Costume", Costume);
+    }
 
     // Use this for initialization
     void Start () {
@@ -44,8 +54,7 @@ public class Enemy : MonoBehaviour {
         ObjectWithScript = GameObject.FindGameObjectWithTag("GameController");
         // Find the script on the empty game object
         gm = ObjectWithScript.GetComponent<GameManager>();
-        // Get our animator
-        anim = GetComponent<Animator>();
+        
         // Set our animation triggers to make sure we start in the idle state
         anim.SetBool("Shoot", false);
         anim.SetBool("Shot", false);
@@ -89,10 +98,8 @@ public class Enemy : MonoBehaviour {
         // If our shoot timer hits zero, shoot the player
         if (shootTimer == 0)
         {
-            if (gm.HitPoints > 0)
+            if (gm.HitPoints > 0 && !Dead)
             {
-                // Minus the player's hearts
-                gm.HeartAnim.SetBool("Ouch!", true); 
                 // Minus the player's health
                 gm.HitPoints--;
             }
@@ -124,6 +131,7 @@ public class Enemy : MonoBehaviour {
                 anim.SetBool("Dead", true);
                 anim.SetBool("Shoot", false);
                 anim.SetBool("Shot", false);
+                Dead = true;
                 // Start our death timer
                 StartCoroutine(Deathanim());
             }   

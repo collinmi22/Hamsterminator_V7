@@ -46,6 +46,12 @@ public class GameManager : MonoBehaviour {
     public float delayTimer;
 
     public int final;
+
+    public Collider col; 
+    
+    // If we are in cover or not
+    [HideInInspector]
+    public bool InCover = false;
     #endregion Public Fields
 
     #region Private Fields
@@ -59,8 +65,7 @@ public class GameManager : MonoBehaviour {
     private Vector3 lp;
     // How far our finger has swiped
     private float swipeDistance;
-    // If we are in cover or not
-    private bool InCover = false;
+   
     // A timer for reloading our gun
     private bool Reloading = false;
     // Checking if we are transitioning or not
@@ -72,6 +77,8 @@ public class GameManager : MonoBehaviour {
         #region Starting Parameters
         // Grabbing our animator from the camera, so we can trigger it.
         CamAnim = Cam.GetComponent<Animator>();
+
+        col = Cam.GetComponent<Collider>(); 
         // Resetting our point value to make sure it doesn't start with false numbers.
         points = 0;
         // Resetting our wave count
@@ -104,6 +111,7 @@ public class GameManager : MonoBehaviour {
         #endregion UI settings
 
         #region Timer checks
+        CamAnim.SetInteger("Wave", waveCount);
         // Check if wave has been completed
         if (timer <= 0 && enemyCount.Count == 0)
         {
@@ -114,15 +122,18 @@ public class GameManager : MonoBehaviour {
             else
             // Log Check to see if it fires
             Debug.Log("Time Up!");
+            /*
             // Trigger Camera move
             CamAnim.SetTrigger("StageClear");
             // A test second trigger to clear it out
             CamAnim.SetTrigger("StageClear");
-            // Add one to the wave count
-            waveCount++;
+            */
+            
             // Set our timer to current wave
 
             Inbetween = true;
+            // Add one to the wave count
+            waveCount++;
 
             timer = waveTimes[waveCount - 1];
         }
@@ -193,6 +204,12 @@ public class GameManager : MonoBehaviour {
                                 // Tells enemies that we are out of cover
                                 InCover = false;
                             }
+                            else
+                            {
+                                CamAnim.SetBool("Cover", true);
+
+                                InCover = true;
+                            }
                         }
                         // If our distance is to the negative x axis, its a left swipe
                         else
@@ -204,6 +221,13 @@ public class GameManager : MonoBehaviour {
                                 CamAnim.SetBool("Cover", true);
                                 // Tells enemies that we are in cover
                                 InCover = true;
+                            }
+                            else
+                            {
+                                // Trigger our animation for getting out of cover
+                                CamAnim.SetBool("Cover", false);
+                                // Tells enemies that we are out of cover
+                                InCover = false;
                             }
                         }
                     }
@@ -250,7 +274,10 @@ public class GameManager : MonoBehaviour {
             // Wait for one second
             yield return new WaitForSeconds(1);
             // Rinse and repeat.
-            StartCoroutine(Timer());
+            if (!Inbetween)
+            {
+                StartCoroutine(Timer());
+            }
         }
     }
 

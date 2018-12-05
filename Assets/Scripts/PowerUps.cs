@@ -35,7 +35,6 @@ public class PowerUps : MonoBehaviour {
         if (gm.HitPoints == 1 || gm.HitPoints == 2)
         {
             gm.HitPoints++;
-            gm.HeartAnim.SetBool("Ouch!", false);
             Debug.Log("Healed!");
             Destroy(gameObject);
         }
